@@ -6,11 +6,13 @@ import {
   getProducts,
   deleteProduct,
   updateProduct,
-  createProduct,
+  addProduct,
+  createProductReview,
 } from "../controllers/productController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
 
-router.route("/").get(getProducts).post(protect, admin, createProduct);
+router.route("/").get(getProducts).post(protect, admin, addProduct);
+router.route("/:id/reviews").put(protect, createProductReview);
 
 router
   .route("/:id")
