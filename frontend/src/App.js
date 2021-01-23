@@ -39,6 +39,17 @@ function App() {
             <Route path='/order/:id' component={OrderScreen} exact />
             <Route path='/admin/userlist' component={UserListScreen} exact />
             <Route path='/search/:keyword' component={HomeScreen} exact />
+            <Route path='/page/:pageNumber' component={HomeScreen} exact />
+            <Route
+              path='/admin/productlist'
+              component={ProductListScreen}
+              exact
+            />
+            <Route
+              path='/search/:keyword/page/:pageNumber'
+              component={HomeScreen}
+              exact
+            />
             <Route
               path='/admin/user/:id/edit'
               component={UserEditScreen}
